@@ -1,4 +1,4 @@
-import { BaseSyntheticEvent } from "react";
+import { BaseSyntheticEvent, useCallback } from "react";
 
 type Props = {
   pages: number[];
@@ -10,9 +10,9 @@ const Pagination = (props: Props) => {
 
   const { pages, onCurrentPage } = props;
 
-  const onClick = (page: number | BaseSyntheticEvent) => {
+  const onClick = useCallback((page: number | BaseSyntheticEvent) => {
     onCurrentPage(page);
-  };
+  }, []);
   return (
     <div>
       {pages.map((page) => (

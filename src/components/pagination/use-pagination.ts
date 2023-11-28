@@ -1,4 +1,4 @@
-import { BaseSyntheticEvent, useState } from "react";
+import { BaseSyntheticEvent, useMemo, useState } from "react";
 
 export const UsePagination = (fetchedData: any) => {
   console.log("USE Pagination");
@@ -16,7 +16,10 @@ export const UsePagination = (fetchedData: any) => {
     .fill(0)
     .map((_, index) => index + 1);
 
-  const data = fetchedData.slice(firstIndex, lastIndex);
+  const data = useMemo(
+    () => fetchedData.slice(firstIndex, lastIndex),
+    [firstIndex, lastIndex, fetchedData]
+  );
 
   return {
     data,

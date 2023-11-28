@@ -15,15 +15,13 @@ export const usePostForm = () => {
     resolver: zodResolver(PostFormSchema),
   });
 
-  const { mutate: save, isSuccess,data } = useMutation({
+  const { mutate: save, isSuccess } = useMutation({
     mutationFn: CreatePost,
     onSuccess: () => {
-      console.log('success');
+      console.log("success");
       queryClient.invalidateQueries({ queryKey: ["posts"] });
     },
   });
-
-  console.log(data)
 
   const onSubmit = (data: TPostFormSchema) => {
     const body = {
@@ -34,7 +32,6 @@ export const usePostForm = () => {
     };
     save(body);
     if (isSuccess) reset();
-    console.log("daaaataaaa", data);
   };
 
   const field = {
