@@ -3,7 +3,7 @@ import Loading from "../loading/loading";
 import Pagination from "../pagination/pagination";
 import { UsePagination } from "../pagination/use-pagination";
 import Post from "../post/post";
-import { TPost, usePosts } from "./usePosts";
+import { TPost, usePosts } from "./use-posts";
 
 const Posts = () => {
   console.log("POSTS");
