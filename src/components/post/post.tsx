@@ -4,12 +4,12 @@ type Props = {
 };
 
 const Post = (props: Props) => {
-  console.log('POST')
+  console.log("POST");
   const { title, description } = props;
   return (
-    <li className="text-md text-gray-900 w-[50%] border rounded m-auto p-4 flex justify-between items-center h-full">
+    <li className="text-md text-gray-900 w-[48rem]  min-h-[6rem] border rounded m-auto p-4 flex justify-between items-center h-full bg-white">
       <div className="flex flex-col justify-start items-start w-[70%]">
-        <span className="text-lg font-bold text-gray-800">{title}</span>
+        <span className="text-lg font-bold text-gray-800 truncate w-[80%]">{title}</span>
         <span className="text-md text-gray-500 w-[80%] truncate">
           {description}
         </span>

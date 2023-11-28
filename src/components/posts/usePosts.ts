@@ -9,7 +9,8 @@ export type TPost = {
 };
 
 export const usePosts = () => {
-  const { data, isLoading, isFetching,isError } = useQuery<TPost[], Error>({
+  console.log("USE POSTs");
+  const { data, isLoading, isFetching, isError } = useQuery<TPost[], Error>({
     queryKey: ["posts"],
     queryFn: getPosts,
   });
@@ -18,6 +19,6 @@ export const usePosts = () => {
     data: isLoading ? [] : data,
     isLoading,
     isFetching,
-    isError
+    isError,
   };
 };

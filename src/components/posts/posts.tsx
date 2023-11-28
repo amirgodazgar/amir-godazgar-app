@@ -4,25 +4,22 @@ import Post from "../post/post";
 import { TPost, usePosts } from "./usePosts";
 
 const Posts = () => {
-  console.log('POSTsssss')
+  console.log("POSTS");
 
   const { data, isLoading, isFetching, isError } = usePosts();
-  const { data: posts, pages, setCurrentPage } = UsePagination(data);
-
-  console.log(posts)
+  const { data: posts, pages, onCurrentPage } = UsePagination(data);
 
   if (isLoading || isFetching) return <div>loading...</div>;
   if (isError) return <div>ERROR</div>;
 
-
   return (
-    <div>
-      <ul className="grid grid-cols-1 gap-y-4 justify-center items-center">
+    <div className="flex flex-col justify-center items-center w-full">
+      <ul className="grid grid-cols-1 gap-y-4 justify-center items-center mb-4">
         {posts?.map((i: TPost) => (
           <Post key={i.id} title={i.title} description={i.body} />
         ))}
       </ul>
-      <Pagination pages={pages} setCurrentPage={setCurrentPage} />
+      <Pagination pages={pages} onCurrentPage={onCurrentPage} />
     </div>
   );
 };

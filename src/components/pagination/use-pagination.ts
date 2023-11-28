@@ -1,6 +1,7 @@
 import { BaseSyntheticEvent, useState } from "react";
 
 export const UsePagination = (fetchedData: any) => {
+  console.log("USE Pagination");
   const [currentPage, setCurrentPage] = useState<number | BaseSyntheticEvent>(
     1
   );
@@ -20,6 +21,6 @@ export const UsePagination = (fetchedData: any) => {
   return {
     data,
     pages,
-    setCurrentPage,
+    onCurrentPage: setCurrentPage,
   };
 };
