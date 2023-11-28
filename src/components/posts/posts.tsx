@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import Loading from "../loading/loading";
 import Pagination from "../pagination/pagination";
 import { UsePagination } from "../pagination/use-pagination";
@@ -8,7 +9,9 @@ const Posts = () => {
   console.log("POSTS");
 
   const { data, isLoading, isError } = usePosts();
-  const { data: posts, pages, onCurrentPage } = UsePagination(data);
+  const { data: posts, pages, setCurrentPage } = UsePagination(data);
+
+  const onCurrentPage = useCallback(setCurrentPage, [setCurrentPage]);
 
   if (isLoading)
     return (

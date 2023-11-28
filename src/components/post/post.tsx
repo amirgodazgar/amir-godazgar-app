@@ -4,7 +4,6 @@ type Props = {
 };
 
 const Post = (props: Props) => {
-  console.log("POST");
   const { title, description } = props;
   return (
     <li className="text-md text-gray-900 w-[48rem] min-h-[6rem] border rounded m-auto p-4 flex flex-col justify-start items-starth-full bg-white">

@@ -24,6 +24,6 @@ export const UsePagination = (fetchedData: any) => {
   return {
     data,
     pages,
-    onCurrentPage: setCurrentPage,
+    setCurrentPage,
   };
 };

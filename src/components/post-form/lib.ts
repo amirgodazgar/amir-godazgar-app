@@ -4,7 +4,7 @@ export const PostFormSchema = z.object({
   title: z
     .string()
     .trim()
-    .min(1, { message: "Title Name is required" })
+    .min(1, { message: "Title is required" })
     .max(100, "Max character should be 100"),
   description: z
     .string()

@@ -13,6 +13,7 @@ const Pagination = (props: Props) => {
   const onClick = useCallback((page: number | BaseSyntheticEvent) => {
     onCurrentPage(page);
   }, []);
+
   return (
     <div>
       {pages.map((page) => (

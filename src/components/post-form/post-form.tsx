@@ -2,9 +2,12 @@ import { Input } from "../input";
 import { usePostForm } from "./use-post-form";
 import { TextArea } from "../text-area";
 import { Button } from "../button";
+import { useCallback } from "react";
 
 const PostForm = () => {
-  const { onSubmit, field, errors } = usePostForm();
+  const { handleSubmit, field, errors } = usePostForm();
+  const onSubmit = useCallback(handleSubmit, [handleSubmit]);
+
   return (
     <div className="flex flex-col gap-4 px-8 py-6 overflow-hidden border border-stroke rounded-lg bg-white shadow-default w-[40%] mb-4 mt-1">
       <div>
