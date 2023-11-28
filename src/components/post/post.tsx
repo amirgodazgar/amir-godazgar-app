@@ -1,11 +1,10 @@
-import React from "react";
-
 type Props = {
   title: string;
   description: string;
 };
 
 const Post = (props: Props) => {
+  console.log('POST')
   const { title, description } = props;
   return (
     <li className="text-md text-gray-900 w-[50%] border rounded m-auto p-4 flex justify-between items-center h-full">
