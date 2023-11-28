@@ -17,8 +17,7 @@ export const usePosts = () => {
 
   return {
     data: isLoading ? [] : data,
-    isLoading,
-    isFetching,
+    isLoading: isLoading || isFetching,
     isError,
   };
 };

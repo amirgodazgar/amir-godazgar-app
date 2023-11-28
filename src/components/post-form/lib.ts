@@ -9,7 +9,7 @@ export const PostFormSchema = z.object({
   description: z
     .string()
     .trim()
-    .min(1, { message: "CEO Information is required" })
+    .min(1, { message: "Description is required" })
     .max(500, "Max character should be 500"),
 });
 

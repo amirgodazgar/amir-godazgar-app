@@ -15,13 +15,13 @@ const PostForm = () => {
         <div>
           <Input register={field.title} label="Title" />
           {errors.title && (
-            <p className="text-meta-1">{`${errors?.title?.message}`}</p>
+            <p className="text-red-600">{`${errors?.title?.message}`}</p>
           )}
         </div>
         <div>
           <TextArea register={field.description} label="Description" />
           {errors.description && (
-            <p className="text-meta-1">{`${errors?.description?.message}`}</p>
+            <p className="text-red-600">{`${errors?.description?.message}`}</p>
           )}
         </div>
         <div>
